@@ -2,7 +2,7 @@
     Batch: AIML
     Day:1(9-8-26)
     Assignment No: 1
-    It Incldes:
+    It Includes:
 '''
 # Why we use python for AIML?
 ''' Python is widely used in AI and Machine Learning (AIML) because it is simple, easy to learn
