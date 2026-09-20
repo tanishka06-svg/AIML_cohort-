@@ -23,7 +23,7 @@ The corpus is divided into smaller pieces using fixed-size chunking.
 
 The notebook uses:
 
--   Chunk size: 300 characters
+-   Chunk size: 250 characters
 -   Overlap: 50 characters
 
 The overlap means that a small part of one chunk is repeated in the next
@@ -46,13 +46,13 @@ The top 3 most similar chunks are returned.
 ### Sample Queries
 
 ``` text
-How does RAG retrieve information?
+What food does a pet cat need?
 ```
 
 and
 
 ``` text
-What are numerical representations of text?
+How can I keep my cat healthy?
 ```
 
 The retrieved chunks are printed along with their similarity scores.
