@@ -1,0 +1,20 @@
+[project]
+name = "system-health-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tanishka Shirode", email = "tmusicholic13@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]==1.30.0",
+    "psutil>=7.2.2",
+]
+
+[project.scripts]
+system-health-mcp = "system_health_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
