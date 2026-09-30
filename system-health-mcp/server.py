@@ -1,7 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 import psutil
 import platform
-import sys
 
 #defining an mcp serevr
 
@@ -112,8 +111,6 @@ Total RAM:
 Available RAM:
 {memory.available / (1024 ** 3):.2f} GB
 
-Python Version:
-{sys.version.split()[0]}
 """
 
 #Tool-3: Get Top Processes
