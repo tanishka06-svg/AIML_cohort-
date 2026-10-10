@@ -1,0 +1,76 @@
+{
+  "run_id": "RUN-001",
+  "task": "Process and update vendor invoices",
+  "started_at": "2026-10-08T10:15:00",
+  "completed_at": "2026-10-08T10:22:30",
+  "status": "completed",
+  "total_actions": 8,
+  "actions": [
+    {
+      "action_id": "A001",
+      "type": "read_invoice",
+      "document": "INV-1001",
+      "status": "success"
+    },
+    {
+      "action_id": "A002",
+      "type": "update_invoice",
+      "document": "INV-1001",
+      "field": "amount",
+      "before": "25000",
+      "after": "25000",
+      "status": "success"
+    },
+    {
+      "action_id": "A003",
+      "type": "read_invoice",
+      "document": "INV-1002",
+      "status": "success"
+    },
+    {
+      "action_id": "A004",
+      "type": "update_invoice",
+      "document": "INV-1002",
+      "field": "amount",
+      "before": "42000",
+      "after": "420000",
+      "status": "success"
+    },
+    {
+      "action_id": "A005",
+      "type": "update_vendor",
+      "document": "INV-1002",
+      "field": "vendor_name",
+      "before": "ABC Supplies",
+      "after": "ABC Supplies",
+      "status": "success"
+    },
+    {
+      "action_id": "A006",
+      "type": "update_invoice",
+      "document": "INV-1003",
+      "field": "amount",
+      "before": "18000",
+      "after": "18000",
+      "status": "success"
+    },
+    {
+      "action_id": "A007",
+      "type": "update_invoice",
+      "document": "INV-1003",
+      "field": "due_date",
+      "before": "2026-10-20",
+      "after": "2026-10-20",
+      "status": "success"
+    },
+    {
+      "action_id": "A008",
+      "type": "update_invoice",
+      "document": "INV-1004",
+      "field": "amount",
+      "before": "31000",
+      "after": "31000",
+      "status": "success"
+    }
+  ]
+}

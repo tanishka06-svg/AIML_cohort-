@@ -1,0 +1,17 @@
+
+{
+  "servers": {
+    "autocomputer-action-auditor": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "E:\\Tanishka Official\\AIML\\autocomputer-action-auditor",
+        "run",
+        "python",
+        "server.py"
+      ]
+    }
+  }
+}
+
