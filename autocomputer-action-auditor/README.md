@@ -89,13 +89,6 @@ data is correct.
                                       test the server.
   -----------------------------------------------------------------------
 
-### Why `uv`?
-
-This project uses `uv` for dependency and environment management. It
-reads `pyproject.toml` and the lockfile, installs the configured
-dependencies, and helps keep setup consistent. The `uv.lock` file
-records resolved dependency versions.
-
 ## System design
 
 ``` mermaid
