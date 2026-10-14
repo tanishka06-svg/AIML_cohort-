@@ -3,9 +3,7 @@
 An MCP server prototype that provides reusable tools for reviewing
 automation runs and adapting invoice data formats.
 
-> **Project scope:** This is an independent prototype using mock data.
-> It is not an official AutoComputer integration and does not connect to
-> AutoComputer's internal systems.
+
 
 ## The problem and the gap
 
@@ -91,16 +89,12 @@ data is correct.
 
 ## System design
 
-``` mermaid
-flowchart LR
-    U[User] --> H[MCP Host<br/>Claude Desktop or VS Code]
-    H <-->|MCP over STDIO| S[server.py<br/>MCP Server]
-    S --> T[Five MCP Tools]
-    T --> D[Mock run JSON<br/>or supplied JSON input]
-    D --> T
-    T --> S
-    S --> H
-    H --> U
+```mermaid
+flowchart TD
+    H["Claude Desktop / VS Code<br/>AI reasoning and tool calling"]
+    H <-->|MCP| S["AutoComputer Action Auditor<br/>server.py"]
+    S --> T["Five MCP Tools<br/>Analyze Run · Detect Changes · Compare Values<br/>Review Summary · Smart Format Adapter"]
+    T <--> D["Input Data<br/>Mock Run JSON / Supplied Invoice JSON"]
 ```
 
 ### Request flow
