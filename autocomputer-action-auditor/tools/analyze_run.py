@@ -3,8 +3,25 @@ from services.data_loader import load_automation_run
 
 
 def analyze_automation_run(run_id: str) -> str:
-    """Summarize an automation run and display its action details."""
+   """
+Analyze an automation run and provide an overview of its recorded actions.
 
+Use this tool when the user wants to:
+- Inspect a specific automation run using its run ID.
+- See the actions performed during the run.
+- Check action details and execution statuses.
+- Understand what happened during an automation task.
+
+Input:
+    run_id: The ID of the automation run to analyze, such as "RUN-001".
+
+Returns:
+    A summary of the run and its recorded action details.
+
+Do not use this tool solely to detect suspicious numerical changes;
+use detect_suspicious_changes for that purpose. Use
+generate_review_summary when the user wants a concise review report.
+"""
     try:
         run = load_automation_run(run_id)
     except (FileNotFoundError, ValueError) as error:

@@ -28,9 +28,36 @@ def normalize_name(name: str) -> str:
 
 
 def adapt_format(source_data_json: str) -> str:
+   def adapt_format(source_data_json: str) -> str:
     """
-    Match unfamiliar column names to standard fields.
-    Input JSON: {"columns": [...], "rows": [{...}]}
+    Standardize invoice data by mapping supported column names to
+    predefined standard fields.
+
+    Use this tool when the user wants to:
+    - Convert invoice column names into standard field names.
+    - Map supplier or vendor columns to vendor_name.
+    - Map amount-related columns to invoice_amount.
+    - Map invoice or bill number columns to invoice_number.
+    - Identify unknown columns or ambiguous field matches.
+
+    Input:
+        source_data_json: A valid JSON string containing:
+            - "columns": A list of column names.
+            - "rows": A list of objects containing the corresponding values.
+
+    Returns:
+        A JSON string containing:
+            - column_mapping: Original names mapped to standard fields.
+            - adapted_rows: Data using the standard field names.
+            - unmapped_columns: Columns not used in the mapping.
+            - needs_review: Fields with multiple possible matches.
+            - message: A reminder to review the mapping.
+
+    The tool uses predefined aliases, not machine learning or RAG.
+    It does not verify invoice authenticity or financial correctness.
+
+    Use this tool for column-name standardization, not for comparing
+    before-and-after values or detecting suspicious changes.
     """
     try:
         data = json.loads(source_data_json)

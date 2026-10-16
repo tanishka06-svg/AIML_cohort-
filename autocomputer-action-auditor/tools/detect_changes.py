@@ -3,7 +3,28 @@ from services.data_loader import load_automation_run
 
 
 def detect_suspicious_changes(run_id: str) -> str:
-    """Identify unusual numeric changes that need human review."""
+    """
+Detect unusually large or small numerical changes in an automation run.
+
+Use this tool when the user asks to:
+- Find suspicious or unusual numerical changes.
+- Identify values that may need human review.
+- Flag potentially risky changes in recorded automation data.
+- Investigate whether a numerical update looks unusual.
+
+Input:
+    run_id: The ID of the automation run to inspect, such as "RUN-001".
+
+Returns:
+    Details of changes that meet the tool's predefined suspicious-change
+    rules, along with reasons for flagging them.
+
+The tool uses predefined numerical thresholds. A flagged change is
+a warning for human review, not proof of an error or fraud.
+
+Do not use this tool for a complete list of all differences;
+use compare_before_after for that purpose.
+"""
 
     try:
         run = load_automation_run(run_id)

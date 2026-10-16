@@ -4,8 +4,29 @@ from tools.detect_changes import detect_suspicious_changes
 
 
 def generate_review_summary(run_id: str) -> str:
-    """Generate a concise review report for an automation run."""
+    """
+Generate a concise review summary for an automation run.
 
+Use this tool when the user wants to:
+- Get an overall summary of an automation run.
+- See the total number of actions, successful actions, and failed actions.
+- See how many changes require human review.
+- Obtain a report combining run statistics and review findings.
+
+Input:
+    run_id: The ID of the automation run to summarize, such as "RUN-001".
+
+Returns:
+    A formatted review summary containing run information, action
+    statistics, and detected changes that may require human attention.
+
+This tool combines information from the run data and suspicious-change
+detection. It does not independently verify whether a flagged change
+is actually incorrect.
+
+Use analyze_automation_run for detailed action-by-action information,
+or detect_suspicious_changes for focused suspicious-change detection.
+"""
     try:
         run = load_automation_run(run_id)
     except (FileNotFoundError, ValueError) as error:

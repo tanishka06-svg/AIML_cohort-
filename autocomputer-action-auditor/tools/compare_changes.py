@@ -3,7 +3,29 @@ from services.data_loader import load_automation_run
 
 
 def compare_before_after(run_id: str) -> str:
-    """Compare before-and-after values in an automation run."""
+    """
+Compare recorded before-and-after values in an automation run.
+
+Use this tool when the user wants to:
+- Compare values before and after an action.
+- Find what changed in the recorded data.
+- Calculate numerical differences or percentage changes.
+- Understand how a value was modified during automation.
+
+Input:
+    run_id: The ID of the automation run to compare, such as "RUN-001".
+
+Returns:
+    Details of recorded changes, including before-and-after values
+    and numerical differences or percentages where applicable.
+
+This tool compares values already recorded in the run data. It does
+not independently retrieve historical values from a live application.
+
+Use detect_suspicious_changes to identify changes that cross the
+predefined suspicious-change thresholds. Use this tool when the main
+goal is to understand the differences themselves.
+"""
 
     try:
         run = load_automation_run(run_id)
